@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 7 - JavaScript Dasar</title>
+</head>
+<body>
+    <h1>Program Konversi Nilai Angka ke Huruf</h1>
+    <p>Yoga adhi nurgroho | NIM: 2500018087 | Informatika - Universitas Ahmad Dahlan</p>
+    <p>Gunakan tombol di bawah ini untuk memasukkan nilai angka.</p>
+    <button onclick="konversiNilai()">Input Nilai</button>
+    <h3 id="hasil"></h3>
+    <script>    
+        function konversiNilai() {
+            let angka = parseInt(prompt("Masukkan nilai angka (0 - 100):"));
+            let nilaiHuruf = "";
+            if (isNaN(angka) || angka < 0 || angka > 100) {
+                alert("Mohon masukkan angka yang valid antara 0 sampai 100!");
+                return;
+            }
+            if (angka <= 20) {
+                nilaiHuruf = "E";
+            } else if (angka <= 39) {
+                nilaiHuruf = "D";
+            } else if (angka <= 64) {
+                nilaiHuruf = "C";
+            } else if (angka <= 79) {
+                nilaiHuruf = "B";
+            } else {
+                nilaiHuruf = "A";
+            }
+            document.getElementById("hasil").innerHTML = 
+                "Nilai Angka: " + angka + " <br> Hasil Nilai Huruf: <strong>" + nilaiHuruf + "</strong>";
+        }
+    </script>
+</body>
+</html>
